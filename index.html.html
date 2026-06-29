@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万雨萱 | 高级交互简历</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans SC', sans-serif; cursor: none; background-color: #f5f5f7; color: #1d1d1f; overflow-x: hidden; }
+        
+        #custom-cursor {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid #84cc16; /* Grass green */
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            backdrop-filter: blur(4px);
+            background: rgba(132, 204, 22, 0.1);
+            transition: transform 0.1s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .snap-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scrollbar-width: none;
+        }
+        .snap-section {
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .snap-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="custom-cursor"></div>
+    
+    <nav class="fixed top-0 left-0 w-full p-8 z-50 flex justify-between items-center mix-blend-difference text-white">
+        <div class="relative group">
+            <h1 class="text-2xl font-bold tracking-tight cursor-pointer">万雨萱</h1>
+            <div class="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500">
+                <div class="glass p-4 rounded-2xl shadow-xl w-48 text-sm space-y-2 text-black mix-blend-normal">
+                    <a href="#home" class="block hover:text-green-600 transition">首页</a>
+                    <a href="#edu" class="block hover:text-green-600 transition">教育经历</a>
+                    <a href="#work" class="block hover:text-green-600 transition">工作经历</a>
+                    <a href="#project" class="block hover:text-green-600 transition">AI实践</a>
+                    <a href="#skills" class="block hover:text-green-600 transition">联系方式</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-sm font-medium">2025届毕业生</div>
+    </nav>
+
+    <div class="snap-container">
+        <section id="home" class="snap-section is-visible">
+            <h2 class="text-7xl font-bold mb-6 tracking-tighter">开启无限可能</h2>
+            <p class="text-2xl text-gray-500 font-light">汉语言文学 · AIGC内容创作</p>
+        </section>
+
+        <section id="edu" class="snap-section">
+            <h3 class="text-4xl font-semibold mb-12">教育经历</h3>
+            <div class="glass p-10 rounded-3xl max-w-2xl w-full shadow-lg">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="text-2xl font-bold">江汉大学</h4>
+                        <p class="text-gray-600 mt-2">汉语言文学 | 本科</p>
+                    </div>
+                    <span class="text-green-600 font-medium">2021.09 - 2025.07</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="snap-section bg-white/30">
+            <h3 class="text-4xl font-semibold mb-12">工作经历</h3>
+            <div class="space-y-6 w-full max-w-2xl">
+                <div class="group glass p-8 rounded-3xl cursor-pointer overflow-hidden relative transition-all duration-500 hover:shadow-2xl">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="text-xl font-bold">武汉天成贵龙文化传播有限公司</h4>
+                            <p class="text-green-700 font-medium">编辑</p>
+                        </div>
+                        <span class="text-sm text-gray-400">2025.08 - 2026.05</span>
+                    </div>
+                    <div class="max-h-0 group-hover:max-h-40 transition-all duration-500 overflow-hidden text-gray-600 mt-0 group-hover:mt-4 text-sm leading-relaxed">
+                        <p>• 负责品牌文化类内容的深度策划与撰写，提升品牌在社交媒体的影响力。</p>
+                        <p>• 优化内容运营流程，整合行业内文案资源，建立标准化内容发布库。</p>
+                        <p>• 监控数据反馈，根据读者阅读习惯调整内容结构，增加用户互动率。</p>
+                    </div>
+                </div>
+
+                <div class="group glass p-8 rounded-3xl cursor-pointer overflow-hidden relative transition-all duration-500 hover:shadow-2xl">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="text-xl font-bold">长江日报 / 武汉众创网</h4>
+                            <p class="text-green-700 font-medium">记者·编辑(实习)</p>
+                        </div>
+                        <span class="text-sm text-gray-400">2023.07 - 2024.10</span>
+                    </div>
+                    <div class="max-h-0 group-hover:max-h-40 transition-all duration-500 overflow-hidden text-gray-600 mt-0 group-hover:mt-4 text-sm leading-relaxed">
+                        <p>• 参与实地新闻采访，撰写深度报道及活动快讯。</p>
+                        <p>• 负责稿件的初审与排版，确保内容符合发布规范及风格统一。</p>
+                        <p>• 协同团队参与多媒体内容创作，尝试文字与视觉的创意融合。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="project" class="snap-section">
+            <h3 class="text-4xl font-semibold mb-12">AI内容创作实践</h3>
+            <div class="glass p-10 rounded-3xl max-w-2xl w-full shadow-lg">
+                <h4 class="text-xl font-bold mb-4">自主研发：AI辅助内容创作工作流</h4>
+                <p class="text-gray-600 leading-relaxed italic">"将AI技术与文学功底相结合，提升内容生产效率超50%。"</p>
+                <div class="mt-6 flex gap-4 text-sm text-green-700">
+                    <span># AIGC工具</span>
+                    <span># 工作流优化</span>
+                    <span># 降本增效</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="snap-section bg-white/50">
+            <h3 class="text-4xl font-semibold mb-12">联系方式</h3>
+            <div class="flex flex-wrap justify-center gap-6">
+                <button onclick="copy('18064006500')" class="glass px-8 py-6 rounded-2xl hover:scale-105 active:scale-95 transition flex flex-col items-center">
+                    <span class="text-gray-500 text-xs uppercase tracking-widest mb-1">电话</span>
+                    <span class="text-xl font-bold">18064006500</span>
+                </button>
+                <button onclick="copy('694361029@qq.com')" class="glass px-8 py-6 rounded-2xl hover:scale-105 active:scale-95 transition flex flex-col items-center">
+                    <span class="text-gray-500 text-xs uppercase tracking-widest mb-1">邮箱</span>
+                    <span class="text-xl font-bold">694361029@qq.com</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-3 rounded-full shadow-lg transform translate-y-20 transition-transform duration-500 z-50">
+        复制成功！
+    </div>
+
+    <script>
+        const cursor = document.getElementById('custom-cursor');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX - 20;
+            mouseY = e.clientY - 20;
+        });
+
+        // Smooth cursor movement using interpolation
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.15;
+            cursorY += (mouseY - cursorY) * 0.15;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Scroll observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                } else {
+                    entry.target.classList.remove('is-visible');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.snap-section').forEach(section => observer.observe(section));
+
+        // Hover Effect
+        document.querySelectorAll('a, button, .group').forEach(el => {
+            el.addEventListener('mouseover', () => cursor.style.transform = 'scale(1.5)');
+            el.addEventListener('mouseout', () => cursor.style.transform = 'scale(1)');
+        });
+
+        function copy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            
+            const toast = document.getElementById('toast');
+            toast.style.transform = 'translateY(0)';
+            setTimeout(() => toast.style.transform = 'translateY(100px)', 2000);
+        }
+    </script>
+</body>
+</html>
